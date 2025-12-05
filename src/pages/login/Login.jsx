@@ -26,7 +26,7 @@ const Login = () => {
 
     try {
       //User Login
-      const { user } = await signIn(email, password)
+       await signIn(email, password)
 
     //   await saveOrUpdateUser({
     //     name: user?.displayName,
@@ -46,7 +46,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       //User Registration using google
-      const { user } = await signInWithGoogle()
+       await signInWithGoogle()
 
     //   await saveOrUpdateUser({
     //     name: user?.displayName,
