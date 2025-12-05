@@ -11,9 +11,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
     const links = [
-        <NavLink className='mr-4 text-lg' to='/'>Home</NavLink>,
-        <NavLink className='mr-4 text-lg' to='/all-contest'>All Contest</NavLink>,
-        <NavLink  to='/extra-section' className='text-lg'>Extra Section</NavLink>
+        <NavLink className='mr-4 text-lg border border-orange-400 rounded-2xl px-4 hover:bg-violet-500 hover:text-white' to='/'>Home</NavLink>,
+        <NavLink className='mr-4 text-lg border border-orange-400 rounded-2xl px-4 hover:bg-violet-500 hover:text-white' to='/all-contest'>All Contest</NavLink>,
+        <NavLink  to='/extra-section' className='text-lg border border-orange-400 rounded-2xl px-4 hover:bg-violet-500 hover:text-white'>Extra Section</NavLink>
     ]
 
     return (
@@ -62,7 +62,7 @@ const Navbar = () => {
                 </div>
               </div>
               {isOpen && (
-                <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
+                <div className='absolute z-1 rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
                   <div className='flex flex-col cursor-pointer'>
                     <Link
                       to='/'
@@ -73,7 +73,7 @@ const Navbar = () => {
 
                     {user ? (
                       <>
-                      <div className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'>
+                      <div className='px-4 py-3 hover:bg-neutral-100 transition font-semibold' >
                         {user?.displayName}
                       </div>
                         <Link

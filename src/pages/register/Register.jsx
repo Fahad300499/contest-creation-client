@@ -28,7 +28,7 @@ const SignUp = () => {
 
     try {
 
-    //   const imageURL = await imageUpload(imageFile)
+      const imageURL = await imageUpload(imageFile)
 
 
       //1. User Registration
@@ -84,11 +84,11 @@ const SignUp = () => {
       //User Registration using google
       const { user } = await signInWithGoogle()
 
-      await saveOrUpdateUser({
-        name: user?.displayName,
-        email: user?.email,
-        image: user?.photoURL,
-      })
+    //   await saveOrUpdateUser({
+    //     name: user?.displayName,
+    //     email: user?.email,
+    //     image: user?.photoURL,
+    //   })
 
       navigate(from, { replace: true })
       toast.success('Signup Successful')
