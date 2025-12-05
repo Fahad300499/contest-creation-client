@@ -1,8 +1,11 @@
 import React from 'react';
 import siteLogo from '../../../assets/contest creation logo.png'
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
 
 const Navbar = () => {
+    const {user} = useAuth();
+    console.log(user);
 
     const links = [
         <NavLink className='mr-4' to='/'>Home</NavLink>,
@@ -34,7 +37,12 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    {
+        user? 
+        <Link className="btn" to='/login'>Logout</Link> : 
+         <Link className="btn" to='/login'>LogIn</Link>
+    }
+    
   </div>
 </div>
     );
