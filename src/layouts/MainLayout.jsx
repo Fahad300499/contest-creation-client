@@ -1,14 +1,20 @@
 import React from 'react';
 import { Outlet } from 'react-router';
+import Navbar from '../components/shared/Navbar/Navbar';
+
 
 const MainLayout = () => {
     return (
-        <div>
-            {/* <Navbar /> */}
-      <div className='pt-24 min-h-[calc(100vh-68px)]'>
-        <Outlet />
-      </div>
-      {/* <Footer /> */}
+        <div className="max-w-7xl mx-auto">
+            <div>
+                <Navbar></Navbar>
+            </div>
+
+            <div>
+                <Outlet />
+            </div>
+
+            {/* <Footer /> */}
         </div>
     );
 };
