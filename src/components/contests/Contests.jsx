@@ -54,6 +54,9 @@ const Contests = () => {
                     )
                 }
             </div>
+            <div className='mx-auto flex justify-center my-8 font-bold text-2xl btn'>
+                <button>Show All Button</button>
+            </div>
 
         </div>
     );

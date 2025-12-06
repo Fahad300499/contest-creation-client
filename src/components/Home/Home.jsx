@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../../pages/Banner/Banner';
 import Contests from '../contests/contests';
+import WinnerSection from '../../pages/winnerAdvertiseSection/WinnerSection';
 
 const Home = () => {
     return (
@@ -8,6 +9,9 @@ const Home = () => {
             <Banner></Banner>
             <div>
                 <Contests></Contests>
+            </div>
+            <div>
+                <WinnerSection></WinnerSection>
             </div>
         </div>
     );
