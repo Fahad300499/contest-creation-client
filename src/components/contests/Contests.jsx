@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router';
 
 const MAX_DESCRIPTION_LENGTH = 100;
 
@@ -44,7 +45,7 @@ const Contests = () => {
                                     {getShortDescription(contest.description, MAX_DESCRIPTION_LENGTH)}
                                 </p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn bg-amber-500 text-white w-full">Details</button>
+                                    <Link to={`/contest/${contest._id}`} className="btn bg-amber-500 text-white w-full">Details</Link>
                                 </div>
                             </div>
                         </div>
