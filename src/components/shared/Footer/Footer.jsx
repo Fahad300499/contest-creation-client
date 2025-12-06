@@ -5,7 +5,7 @@ import logo from '../../../assets/contest creation logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-horizontal footer-center bg-primary text-primary-content p-10">
+            <footer className="footer footer-horizontal footer-center bg-orange-300 text-primary-content p-10">
   <aside>
    <img className='w-15 h-15' src={logo} alt="" srcset="" />
     <p className="font-bold">

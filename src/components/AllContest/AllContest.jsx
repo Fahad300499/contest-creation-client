@@ -3,36 +3,36 @@ import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router';
 
+
 const MAX_DESCRIPTION_LENGTH = 100;
 
-const Contests = () => {
-    const { data: contests = [], isLoading } = useQuery({
-        queryKey: ['plants'],
+const AllContest = () => {
+     const { data: allContests = [], isLoading } = useQuery({
+        queryKey: ['allContest'],
         queryFn: async () => {
-            const result = await axios(`http://localhost:3000/contests`)
+            const result = await axios(`http://localhost:3000/all-contests`)
             return result.data
         },
     })
 
-    const getShortDescription = (description, limit) => {
+      const getShortDescription = (description, limit) => {
         if (!description) return "";
-        return description.length > limit
-            ? description.slice(0, limit) + "..."
-            : description;
+        return description.length > limit 
+               ? description.slice(0, limit) + "..."
+               : description;
     };
-
-
     return (
         <div>
-            <h1 className='text-3xl font-bold text-center mt-6'>Populer Contest</h1>
+            <div>
+                 <h1 className='text-3xl font-bold text-center mt-6'>All Contest</h1>
             <div className='grid grid-cols-3 gap-10 p-5'>
                 {
-                    contests.map(contest => <div>
+                    allContests.map(contest => <div>
                         <div key={contest._id} className="card bg-base-100 w-96 shadow-sm">
                             <figure>
                                 <img
                                     src={contest.image}
-                                    alt="Shoes" />
+                                    alt="contest" />
                             </figure>
                             <div className="card-body">
                                 <div className='flex justify-between gap-3 items-center'>
@@ -53,13 +53,9 @@ const Contests = () => {
                     )
                 }
             </div>
-            <div className='mx-auto flex justify-center my-8 font-bold text-2xl'>
-                <Link to={`/all-contest`} className="btn bg-amber-500 text-white w-full">Show All</Link>
-
             </div>
-
         </div>
     );
 };
 
-export default Contests;
+export default AllContest;
